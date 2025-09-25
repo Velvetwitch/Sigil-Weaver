@@ -246,4 +246,49 @@ canvas { display: block; width: 100%; height: auto; }
   background: var(--panel-2);
   font-size: 12px;
   color: var(--muted);
+
+  body {
+  font-family: Arial, sans-serif;
+  background: #fff8f0;
+  color: #2e2e2e;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+#form {
+  margin: 20px 0;
+}
+
+input {
+  padding: 8px;
+  font-size: 1rem;
+  margin-right: 8px;
+  border: 1px solid #666;
+  border-radius: 4px;
+}
+
+button {
+  padding: 8px 16px;
+  font-size: 1rem;
+  background: #666;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #444;
+}
+
+canvas {
+  border: 1px solid #2e2e2e;
+  margin-top: 20px;
+}
+
 }

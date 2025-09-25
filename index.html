@@ -8,15 +8,24 @@
 </head>
 <body>
   <header>
-    <h1>Sigil Weaver</h1>
+    <h1>Sigil Weaver ✨</h1>
   </header>
 
   <main>
-    <p>Welcome to the Sigil Weaver app ✨</p>
-    <p>This is your starting point — your magic begins here.</p>
-    
-    <!-- App content goes here -->
-    <div id="app"></div>
+    <section id="intro">
+      <p>Welcome! Create your own magical sigils from words, numbers, or spells.</p>
+    </section>
+
+    <section id="form">
+      <label for="spellInput">Your spell / intention:</label><br />
+      <input type="text" id="spellInput" placeholder="Type your words..." />
+      <button onclick="generateSigil()">Render Sigil</button>
+    </section>
+
+    <section id="output">
+      <h2>Your Sigil</h2>
+      <canvas id="sigilCanvas" width="400" height="400"></canvas>
+    </section>
   </main>
 
   <footer>
@@ -26,3 +35,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
