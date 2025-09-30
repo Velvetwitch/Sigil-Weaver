@@ -142,15 +142,19 @@
     }
     setCanvasSize(parseInt(sizeEl.value, 10));
 
-    function preprocess(text, includeVowels) {
-      const onlyLetters = text.toUpperCase().replace(/[^A-Z]/g, '');
-      // Remove vowels if requested. Y is NEVER considered a vowel here.
-      const filtered = includeVowels ? onlyLetters : onlyLetters.replace(/[AEIOU]/g, '');
-      // Remove duplicate letters, keep first occurrence
-      let out = '';
-      for (const ch of filtered) if (!out.includes(ch)) out += ch;
-      return out;
-    }
+  function preprocess(text, includeVowels) {
+  const onlyLetters = text.toUpperCase().replace(/[^A-Z]/g, '');
+  // Remove vowels if requested. Y is NEVER considered a vowel here.
+  const filtered = includeVowels ? onlyLetters : onlyLetters.replace(/[AEIOU]/g, '');
+
+  // Exclude any letter that appears more than once
+  const counts = {};
+  for (const ch of filtered) counts[ch] = (counts[ch] || 0) + 1;
+
+  let out = '';
+  for (const ch of filtered) if (counts[ch] === 1) out += ch;
+  return out;
+}
 
     function seqAlphabet(letters) {
       // Map A-Z around the circle (26 points)
